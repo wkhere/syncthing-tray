@@ -5,7 +5,10 @@ go-docker:
 	docker run -v $(PWD):/syncthing-tray --rm st-tray \
 		make go -C/syncthing-tray
 
+install: syncthing-tray
+	cp -a syncthing-tray ~/bin/
+
 go:
 	go build -ldflags "-X main.VersionStr=$(VER) -X main.BuildUnixTime=$(shell date +%s)"
 
-.PHONY: go-docker go
+.PHONY: go-docker go install
