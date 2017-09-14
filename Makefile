@@ -6,6 +6,7 @@ go-docker:
 		make go -C/syncthing-tray
 
 install: syncthing-tray
+	strip syncthing-tray
 	cp -a syncthing-tray ~/bin/
 
 go:
