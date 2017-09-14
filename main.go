@@ -260,8 +260,12 @@ func setupTray() {
 	useRates := flag.Bool("R", false, "use transfer rates to determine upload/download state")
 	flag.Parse()
 
+	config.ApiKey = os.Getenv("STAPIKEY")
+
 	config.Url = *url
-	config.ApiKey = *api
+	if *api != "" {
+		config.ApiKey = *api
+	}
 	config.insecure = *insecure
 	config.useRates = *useRates
 
