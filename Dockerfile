@@ -1,6 +1,7 @@
 FROM vcatechnology/linux-mint:18.0
 WORKDIR /root
 
+RUN apt-get update
 RUN apt-get install -y curl build-essential make git-core
 RUN apt-get install -y libgtk-3-dev libappindicator3-dev
 
